@@ -6,7 +6,7 @@ public class CubeEditor : MonoBehaviour
 {
     [Range(1f, 20f)] [SerializeField] private float gridSize = 10f;
     [SerializeField] private TextMesh textMesh;
-    void Update()
+    private void Update()
     {
         Vector3 snapPos, objectPos = transform.position;
         snapPos.x = Mathf.RoundToInt(objectPos.x / 10f) * gridSize;
@@ -16,6 +16,6 @@ public class CubeEditor : MonoBehaviour
 
         textMesh = GetComponentInChildren<TextMesh>();
         textMesh.text = snapPos.x/gridSize + "," + snapPos.z/gridSize;
-
+        gameObject.name = textMesh.text;
     }
 }
