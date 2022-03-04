@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Pathfinder : MonoBehaviour
 {
-    private Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
     [SerializeField] private Waypoint startWaypoint, endWaypoint;
+    
+    private Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+    private Queue<Waypoint> queue = new Queue<Waypoint>();
+    private bool isRunning = true;
 
     private Vector2Int[] directions =
     {
         Vector2Int.up,
         Vector2Int.right,
-        Vector2Int.left,
-        Vector2Int.down
+        Vector2Int.down,
+        Vector2Int.left
     };
     
     private void Start()
@@ -20,6 +23,7 @@ public class Pathfinder : MonoBehaviour
         LoadBlocks();
         ColorBounds();
         ExploreNeighbors();
+        Pathfind();
     }
 
     private void LoadBlocks()
@@ -34,7 +38,6 @@ public class Pathfinder : MonoBehaviour
                 continue;
             }
             grid.Add(gridPos,waypoint);
-            print("On the point " + gridPos);
         }
         print("Loaded " + grid.Count + " blocks");
     }
@@ -55,6 +58,27 @@ public class Pathfinder : MonoBehaviour
                 grid[neighborGridPos].SetTopColor(Color.red);
             }
             catch {}
+        }
+    }
+
+    private void Pathfind()
+    {
+        queue.Enqueue(startWaypoint);
+        while (queue.Count > 0)
+        {
+            var searchCenter = queue.Dequeue();
+            print("Searching: " + searchCenter);
+            HaltIfEndFound(searchCenter);
+        }
+        print("Finished");
+    }
+
+    private void HaltIfEndFound(Waypoint searchCenter)
+    {
+        if (searchCenter.Equals(endWaypoint))
+        {
+            print("Reached the end.");
+            isRunning = false;
         }
     }
 }
