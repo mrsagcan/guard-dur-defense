@@ -81,7 +81,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6402840591944515053}
-  m_Text: 0,0
+  m_Text: 3,0
   m_OffsetZ: 0
   m_CharacterSize: 0.03
   m_LineSpacing: 1
@@ -445,6 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9608a39c252c364bb54264a9680eba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isExplored: 0
 --- !u!1 &6649161375551902314
 GameObject:
   m_ObjectHideFlags: 0
