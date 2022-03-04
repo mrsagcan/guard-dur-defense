@@ -6,12 +6,20 @@ public class Pathfinder : MonoBehaviour
 {
     private Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
     [SerializeField] private Waypoint startWaypoint, endWaypoint;
-    
+
+    private Vector2Int[] directions =
+    {
+        Vector2Int.up,
+        Vector2Int.right,
+        Vector2Int.left,
+        Vector2Int.down
+    };
     
     private void Start()
     {
         LoadBlocks();
         ColorBounds();
+        ExploreNeighbors();
     }
 
     private void LoadBlocks()
@@ -26,6 +34,7 @@ public class Pathfinder : MonoBehaviour
                 continue;
             }
             grid.Add(gridPos,waypoint);
+            print("On the point " + gridPos);
         }
         print("Loaded " + grid.Count + " blocks");
     }
@@ -34,5 +43,18 @@ public class Pathfinder : MonoBehaviour
     {
         startWaypoint.SetTopColor(Color.gray);
         endWaypoint.SetTopColor(Color.black);
+    }
+
+    private void ExploreNeighbors()
+    {
+        foreach (Vector2Int direction in directions)
+        {
+            Vector2Int neighborGridPos = startWaypoint.GetGridPos() + direction;
+            try
+            {
+                grid[neighborGridPos].SetTopColor(Color.red);
+            }
+            catch {}
+        }
     }
 }
