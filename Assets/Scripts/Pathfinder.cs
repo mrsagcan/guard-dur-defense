@@ -5,8 +5,7 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     private Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
-    [SerializeField] private Waypoint startWaypoint;
-    [SerializeField] private Waypoint endWaypoint;
+    [SerializeField] private Waypoint startWaypoint, endWaypoint;
     
     
     private void Start()
