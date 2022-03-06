@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-
-    [SerializeField] private List<Waypoint> path;
-
     private void Start()
     {
-        //StartCoroutine(FollowPath());
+        Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
+        var path = pathfinder.GetPath();
+        StartCoroutine(FollowPath(path));
     }
 
-    private IEnumerator FollowPath()
+    private IEnumerator FollowPath(List<Waypoint> path)
     {
         print("Starting patrol...");
         foreach (Waypoint waypoint in path)
