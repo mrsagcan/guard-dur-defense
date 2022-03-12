@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &971090640
+--- !u!114 &2052700312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,19 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetEnemy: {fileID: 0}
---- !u!114 &2122440818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3460284525423721059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 762f0cd7ca4dcc84fbe555cd3ec250fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetEnemy: {fileID: 0}
+  attackRange: 30
 --- !u!1 &8987985275719702228
 GameObject:
   m_ObjectHideFlags: 0
