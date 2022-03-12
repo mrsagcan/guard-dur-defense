@@ -2,23 +2,19 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    [SerializeField] private int maxHitPoints = 5;
+    [SerializeField] private int maxHitPoints = 10;
     
     private void OnParticleCollision(GameObject other)
     {
-        HitEnemy();
+        ProcessHit();
     }
 
-    private void HitEnemy()
+    private void ProcessHit()
     {
-        if (maxHitPoints == 0)
+        maxHitPoints--;
+        if (maxHitPoints < 0)
         {
             Destroy(gameObject);
-        }
-        else
-        {
-            maxHitPoints--;
-            print(maxHitPoints);
         }
     }
 }
