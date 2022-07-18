@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private Transform targetEnemy;
+    [SerializeField] private Transform objectToPan;
     [SerializeField] private float attackRange;
     private ParticleSystem projectile;
+
+    [SerializeField] private Transform targetEnemy;
     private void Start()
     {
         projectile = GetComponentInChildren<ParticleSystem>();
@@ -14,6 +16,7 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
+        SetTargetEnemy();
         if (targetEnemy)
         {
             LookAtEnemy();
@@ -25,6 +28,29 @@ public class Tower : MonoBehaviour
         }
     }
 
+    private void SetTargetEnemy()
+    {
+        var sceneEnemies = FindObjectsOfType<EnemyDamage>();
+        if (sceneEnemies.Length == 0) { return; }
+
+        Transform closestEnemy = sceneEnemies[0].transform;
+        foreach (var testEnemy in sceneEnemies)
+        {
+            closestEnemy = GetClosest(closestEnemy, testEnemy.transform);
+        }
+
+        targetEnemy = closestEnemy;
+    }
+
+    private Transform GetClosest(Transform firstEnemy, Transform secondEnemy)
+    {
+        float firstDistance = Vector3.Distance(transform.position, firstEnemy.position);
+        float secondDistance = Vector3.Distance(transform.position, secondEnemy.position);
+        if (secondDistance < firstDistance)
+            return secondEnemy;
+        return firstEnemy;
+    }
+
     private void FireAtEnemy()
     {
         float distanceToEnemy = Vector3.Distance(targetEnemy.position, gameObject.transform.position);
@@ -33,7 +59,7 @@ public class Tower : MonoBehaviour
 
     private void LookAtEnemy()
     {
-        transform.LookAt(targetEnemy);
+        objectToPan.LookAt(targetEnemy);
     }
 
     private void Shoot(bool state)

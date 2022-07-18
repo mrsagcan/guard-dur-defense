@@ -576,6 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 291150204}
+  - component: {fileID: 291150205}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -598,6 +599,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &291150205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291150203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08af36dc2a03d014d96cdf7f59627eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsBetweenSpawns: 8
+  enemyPrefab: {fileID: 1776412382, guid: 1c2c30c1f560c984ea3b477f9c9502f7, type: 3}
 --- !u!4 &401126646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4320373430648300, guid: eaf585f6d1c526346860421fbfbc3de4, type: 3}
@@ -1001,28 +1016,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2846709898144027147, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
+      propertyPath: targetEnemy
+      value: 
+      objectReference: {fileID: 1776412383}
     m_RemovedComponents:
     - {fileID: 2052700312, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
---- !u!1 &702371458 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3460284525423721059, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
-  m_PrefabInstance: {fileID: 702371457}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &702371459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 702371458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 762f0cd7ca4dcc84fbe555cd3ec250fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetEnemy: {fileID: 1776412383}
-  attackRange: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,6 +1971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2846709898144027147, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
+      propertyPath: targetEnemy
+      value: 
+      objectReference: {fileID: 1776412383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
 --- !u!1 &1011757302
@@ -4228,6 +4232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2846709898144027147, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
+      propertyPath: targetEnemy
+      value: 
+      objectReference: {fileID: 1776412383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
 --- !u!1001 &2089987900
@@ -4621,17 +4629,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 440132575}
     m_Modifications:
-    - target: {fileID: 2052700312, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
-      propertyPath: targetEnemy
-      value: 
-      objectReference: {fileID: 1776412383}
     - target: {fileID: 720152927051036608, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 720152927051036608, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 720152927051036608, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4639,7 +4643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 720152927051036608, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 720152927051036608, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4673,6 +4677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 2846709898144027147, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
+      propertyPath: targetEnemy
+      value: 
+      objectReference: {fileID: 1776412383}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb3fa03ae33c7b4c981fcc71b23134d, type: 3}
 --- !u!114 &7612665917444382789
