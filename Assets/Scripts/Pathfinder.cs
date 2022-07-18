@@ -31,7 +31,6 @@ public class Pathfinder : MonoBehaviour
     private void CalculatePath()
     {
         LoadBlocks();
-        ColorBounds();
         BreadthFirstSearch();
         CreatePath();
     }
@@ -52,15 +51,7 @@ public class Pathfinder : MonoBehaviour
             }
         }
     }
-
-    private void ColorBounds()
-    {
-        //todo consider moving out
-        startWaypoint.SetTopColor(Color.gray);
-        endWaypoint.SetTopColor(Color.black);
-    }
-
-
+    
     private void BreadthFirstSearch()
     {
         queue.Enqueue(startWaypoint);
