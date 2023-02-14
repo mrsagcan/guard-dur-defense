@@ -1977,7 +1977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c9978eae145ab439f5fbc445a7c07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 5040643765344069697, guid: b940df629b09f434dbb9fd487257db6c, type: 3}
+  spawnTimer: 1
 --- !u!4 &2010248945
 Transform:
   m_ObjectHideFlags: 0
