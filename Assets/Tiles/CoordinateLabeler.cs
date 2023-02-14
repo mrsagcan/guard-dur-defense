@@ -30,10 +30,10 @@ public class CoordinateLabeler : MonoBehaviour
         }
 
         ColorCoordinates();
-        ToggleColors();
+        ToggleLabels();
     }
 
-    private void ToggleColors()
+    private void ToggleLabels()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
