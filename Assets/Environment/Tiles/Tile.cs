@@ -39,7 +39,6 @@ public class Tile : MonoBehaviour
         if (gridManager.Grid[coordinates].isWalkable && !pathfinder.WillBlockPath(coordinates))
         {
             bool isSuccesful = towerPrefab.CreateTower(towerPrefab, transform.position);
-            isPlaceable = !isSuccesful;
 
             if (isSuccesful)
             {
