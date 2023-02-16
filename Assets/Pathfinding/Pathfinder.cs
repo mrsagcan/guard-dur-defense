@@ -7,7 +7,9 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     [SerializeField] private Vector2Int startCoordinates;
+    public Vector2Int StartCoordinates { get { return startCoordinates; } }
     [SerializeField] private Vector2Int destinationCoordinates;
+    public Vector2Int DestinationCoordinates { get { return destinationCoordinates; } }
     
     private Node startNode;
     private Node destinationNode;
@@ -16,7 +18,7 @@ public class Pathfinder : MonoBehaviour
     private Queue<Node> frontier = new Queue<Node>();
     private Dictionary<Vector2Int, Node> reached = new Dictionary<Vector2Int, Node>();
 
-    private Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
+    private Vector2Int[] directions = {  Vector2Int.right, Vector2Int.up, Vector2Int.left, Vector2Int.down };
     private GridManager gridManager;
     private Dictionary<Vector2Int, Node> grid = new Dictionary<Vector2Int, Node>();
     private void Awake()
@@ -25,6 +27,8 @@ public class Pathfinder : MonoBehaviour
         if (gridManager.Grid != null)
         {
             grid = gridManager.Grid;
+            startNode = grid[startCoordinates];
+            destinationNode = grid[destinationCoordinates];
         }
 
         
@@ -32,8 +36,6 @@ public class Pathfinder : MonoBehaviour
 
     private void Start()
     {
-        startNode = grid[startCoordinates];
-        destinationNode = grid[destinationCoordinates];
         GetNewPath();
     }
 
@@ -70,6 +72,8 @@ public class Pathfinder : MonoBehaviour
 
     private void BreadthFirstSearch()
     {
+        startNode.isWalkable = true;
+        destinationNode.isWalkable = true;
         frontier.Clear();
         reached.Clear();
         

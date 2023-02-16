@@ -68,7 +68,7 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < gridSize.y; y++)
             {
                 Vector2Int coordinates = new Vector2Int(x, y);
-                grid.Add(coordinates, new Node(coordinates));
+                grid.Add(coordinates, new Node(coordinates,true));
             }
         }
     }
