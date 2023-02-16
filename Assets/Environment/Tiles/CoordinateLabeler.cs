@@ -9,14 +9,14 @@ using Unity.VisualScripting;
 [ExecuteAlways]
 public class CoordinateLabeler : MonoBehaviour
 {
-    [SerializeField] private Color blockedColor = Color.gray;
-    [SerializeField] private Color defaultColor = Color.yellow;
-    [SerializeField] private Color exploredColor = Color.black;
-    [SerializeField] private Color pathColor = new Color(1f, 0.2f, 0f);
+    [SerializeField] private Color blockedColor = Color.white;
+    [SerializeField] private Color defaultColor = Color.gray;
+    [SerializeField] private Color exploredColor = Color.yellow;
+    [SerializeField] private Color pathColor = new Color(1f, 0f, 0f);
 
     private GridManager gridManager;
     private TextMeshPro label;
-    private Vector2Int coordinates = new Vector2Int();
+    private Vector2Int coordinates;
     
     private void Awake()
     {
@@ -32,6 +32,7 @@ public class CoordinateLabeler : MonoBehaviour
         {
             DisplayCoordinates();
             UpdateObjectName();
+            label.enabled = true;
         }
 
         SetLabelColor();
