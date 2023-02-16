@@ -1335,6 +1335,18 @@ PrefabInstance:
       propertyPath: m_text
       value: -2,-1
       objectReference: {fileID: 0}
+    - target: {fileID: 2139499060286295115, guid: abe829c120d2c854a863b98fde28afb4, type: 3}
+      propertyPath: blockedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139499060286295115, guid: abe829c120d2c854a863b98fde28afb4, type: 3}
+      propertyPath: blockedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139499060286295115, guid: abe829c120d2c854a863b98fde28afb4, type: 3}
+      propertyPath: blockedColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe829c120d2c854a863b98fde28afb4, type: 3}
 --- !u!4 &91643177 stripped
@@ -22706,7 +22718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c1215f8416e7340ad9c0c6a3755184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: {x: 4, y: 3}
+  gridSize: {x: 5, y: 5}
 --- !u!4 &1136006057
 Transform:
   m_ObjectHideFlags: 0
@@ -29926,6 +29938,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4990206744999672810, guid: ce3465646cbc6f14eb21a94475ad53df, type: 3}
   m_PrefabInstance: {fileID: 1443496606}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1447030771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1288929781835752953, guid: 6e203a9f2563d0d4682e8551a8451efa, type: 3}
+  m_PrefabInstance: {fileID: 1288929782149157654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1447030772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447030771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd443b5aa31af7543933832720b2b266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentSearchNode:
+    coordinates: {x: 2, y: 2}
+    isWalkable: 0
+    isExplored: 0
+    isPath: 0
 --- !u!1001 &1455653200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43540,6 +43574,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1288929781835752934, guid: 6e203a9f2563d0d4682e8551a8451efa, type: 3}
+      propertyPath: poolSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1288929781835752935, guid: 6e203a9f2563d0d4682e8551a8451efa, type: 3}
       propertyPath: m_RootOrder
       value: 3

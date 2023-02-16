@@ -9,10 +9,10 @@ using Unity.VisualScripting;
 [ExecuteAlways]
 public class CoordinateLabeler : MonoBehaviour
 {
-    [SerializeField] private Color blockedColor = Color.black;
-    [SerializeField] private Color defaultColor = Color.red;
-    [SerializeField] private Color exploredColor = Color.gray;
-    [SerializeField] private Color pathColor = new Color(1f, 0.5f, 0f);
+    [SerializeField] private Color blockedColor = Color.gray;
+    [SerializeField] private Color defaultColor = Color.yellow;
+    [SerializeField] private Color exploredColor = Color.black;
+    [SerializeField] private Color pathColor = new Color(1f, 0.2f, 0f);
 
     private GridManager gridManager;
     private TextMeshPro label;
