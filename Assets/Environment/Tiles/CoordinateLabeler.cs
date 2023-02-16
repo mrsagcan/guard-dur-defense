@@ -11,7 +11,7 @@ public class CoordinateLabeler : MonoBehaviour
 {
     [SerializeField] private Color blockedColor = Color.gray;
     [SerializeField] private Color defaultColor = Color.white;
-    [SerializeField] private Color exploredColor = Color.yellow;
+    [SerializeField] private Color exploredColor = new Color(1f, 0.2f, 0f);
     [SerializeField] private Color pathColor = new Color(1f, 0f, 0f);
 
     private GridManager gridManager;
